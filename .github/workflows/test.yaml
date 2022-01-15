@@ -33,3 +33,8 @@ jobs:
          run: |
            date
            touch ${{ secrets.MY_FILE_NAME }}.yaml
+       - name: Upload a Build Artifact
+         uses: actions/upload-artifact@v2.3.1
+         with:
+            name: my_custom_file
+            path: ./${{ secrets.MY_FILE_NAME }}.yaml
